@@ -1,0 +1,72 @@
+{
+	"permissions": {
+		"allow": [
+			"Bash(brew list *)",
+			"Bash(bun pm ls *)",
+			"Bash(bun run build *)",
+			"Bash(bun run lint *)",
+			"Bash(bun run typecheck *)",
+			"Bash(cat *)",
+			"Bash(date *)",
+			"Bash(df *)",
+			"Bash(diff *)",
+			"Bash(du *)",
+			"Bash(env *)",
+			"Bash(file *)",
+			"Bash(find *)",
+			"Bash(git diff *)",
+			"Bash(git log *)",
+			"Bash(git show *)",
+			"Bash(git status *)",
+			"Bash(grep *)",
+			"Bash(head *)",
+			"Bash(ls *)",
+			"Bash(npm list *)",
+			"Bash(npm run build *)",
+			"Bash(npm run lint *)",
+			"Bash(npm run typecheck *)",
+			"Bash(pnpm list *)",
+			"Bash(pnpm outdated *)",
+			"Bash(pnpm run build *)",
+			"Bash(pnpm run format *)",
+			"Bash(pnpm run lint *)",
+			"Bash(pnpm run typecheck *)",
+			"Bash(pnpm view *)",
+			"Bash(pnpm why *)",
+			"Bash(pwd *)",
+			"Bash(rg *)",
+			"Bash(sips *)",
+			"Bash(tail *)",
+			"Bash(tree *)",
+			"Bash(uname *)",
+			"Bash(wc *)",
+			"Bash(which *)",
+			"Bash(whoami *)"
+		]
+	},
+	"model": "opusplan",
+	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Edit|Write",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "jq -r '.tool_input.file_path' | { read -r f; bunx prettier --write \"$f\"; } 2>/dev/null || true"
+					}
+				]
+			}
+		]
+	},
+	"tui": "fullscreen",
+	"voice": {
+		"enabled": false,
+		"mode": "hold"
+	},
+	"theme": "auto",
+	"editorMode": "vim",
+	"inputNeededNotifEnabled": true,
+	"skipAutoPermissionPrompt": true,
+	"voiceEnabled": false,
+	"agentPushNotifEnabled": true
+}

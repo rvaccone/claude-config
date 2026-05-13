@@ -1,0 +1,28 @@
+{
+	"$schema": "https://www.schemastore.org/claude-code-keybindings.json",
+	"$docs": "https://code.claude.com/docs/en/keybindings",
+	"bindings": [
+		{
+			"context": "Chat",
+			"bindings": {
+				"ctrl+j": null,
+				"shift+tab": null,
+				"tab": "chat:cycleMode"
+			}
+		},
+		{
+			"context": "Transcript",
+			"bindings": {
+				"ctrl+k": "scroll:lineUp",
+				"ctrl+j": "scroll:lineDown"
+			}
+		},
+		{
+			"context": "Scroll",
+			"bindings": {
+				"ctrl+k": "scroll:lineUp",
+				"ctrl+j": "scroll:lineDown"
+			}
+		}
+	]
+}

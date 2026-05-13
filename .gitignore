@@ -1,0 +1,38 @@
+# secrets — ~/.claude.json and its backups contain MCP API tokens
+backups/
+.claude.json
+.claude.json.backup*
+
+# ephemeral runtime state
+cache/
+daemon/
+daemon.lock
+daemon.log
+daemon.status.json
+debug/
+downloads/
+file-history/
+history.jsonl
+jobs/
+paste-cache/
+plans/
+projects/
+session-env/
+sessions/
+shell-snapshots/
+statsig/
+tasks/
+telemetry/
+todos/
+stats-cache.json
+policy-limits.json
+.last-cleanup
+
+# plugin marketplace cache (auto-fetched, ~4.5 MB)
+plugins/
+
+# local-only settings overrides
+settings.local.json
+
+# macOS
+.DS_Store
