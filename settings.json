@@ -63,6 +63,10 @@
 		"enabled": false,
 		"mode": "hold"
 	},
+	"attribution": {
+		"commit": "",
+		"pr": ""
+	},
 	"theme": "auto",
 	"editorMode": "vim",
 	"inputNeededNotifEnabled": true,
