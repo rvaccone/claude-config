@@ -1,0 +1,9 @@
+{
+	"name": "default",
+	"base": "dark",
+	"overrides": {
+		"promptBorder": "#D97757",
+		"planMode": "#8FA98A",
+		"autoAccept": "#C4876D"
+	}
+}
