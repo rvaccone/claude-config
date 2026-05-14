@@ -31,6 +31,18 @@ policy-limits.json
 # plugin marketplace cache (auto-fetched, ~4.5 MB)
 plugins/
 
+# auto-downloaded skills cache
+skills/
+
+# image and misc caches
+image-cache/
+
+# settings backups
+settings.json.bak.*
+
+# claude internal subdirectory
+.claude/
+
 # local-only settings overrides
 settings.local.json
 

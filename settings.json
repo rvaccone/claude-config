@@ -1,4 +1,8 @@
 {
+	"attribution": {
+		"commit": "",
+		"pr": ""
+	},
 	"permissions": {
 		"allow": [
 			"Bash(brew list *)",
@@ -63,14 +67,14 @@
 		"enabled": false,
 		"mode": "hold"
 	},
-	"attribution": {
-		"commit": "",
-		"pr": ""
-	},
-	"theme": "auto",
+	"theme": "custom:default",
 	"editorMode": "vim",
 	"inputNeededNotifEnabled": true,
+	"agentPushNotifEnabled": true,
 	"skipAutoPermissionPrompt": true,
 	"voiceEnabled": false,
-	"agentPushNotifEnabled": true
+	"statusLine": {
+		"type": "command",
+		"command": "bash ~/.claude/statusline-command.sh"
+	}
 }
