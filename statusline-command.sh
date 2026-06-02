@@ -2,6 +2,7 @@
 input=$(cat)
 
 model=$(echo "$input" | jq -r '.model.display_name // empty')
+effort=$(echo "$input" | jq -r '.effort.level // empty')
 used=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 remaining=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
 five_hr=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
@@ -11,6 +12,10 @@ parts=()
 
 if [ -n "$model" ]; then
 	parts+=("$model")
+fi
+
+if [ -n "$effort" ]; then
+	parts+=("effort: $effort")
 fi
 
 if [ -n "$used" ] && [ -n "$remaining" ]; then

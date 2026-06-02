@@ -1,80 +1,86 @@
 {
-	"attribution": {
-		"commit": "",
-		"pr": ""
-	},
-	"permissions": {
-		"allow": [
-			"Bash(brew list *)",
-			"Bash(bun pm ls *)",
-			"Bash(bun run build *)",
-			"Bash(bun run lint *)",
-			"Bash(bun run typecheck *)",
-			"Bash(cat *)",
-			"Bash(date *)",
-			"Bash(df *)",
-			"Bash(diff *)",
-			"Bash(du *)",
-			"Bash(env *)",
-			"Bash(file *)",
-			"Bash(find *)",
-			"Bash(git diff *)",
-			"Bash(git log *)",
-			"Bash(git show *)",
-			"Bash(git status *)",
-			"Bash(grep *)",
-			"Bash(head *)",
-			"Bash(ls *)",
-			"Bash(npm list *)",
-			"Bash(npm run build *)",
-			"Bash(npm run lint *)",
-			"Bash(npm run typecheck *)",
-			"Bash(pnpm list *)",
-			"Bash(pnpm outdated *)",
-			"Bash(pnpm run build *)",
-			"Bash(pnpm run format *)",
-			"Bash(pnpm run lint *)",
-			"Bash(pnpm run typecheck *)",
-			"Bash(pnpm view *)",
-			"Bash(pnpm why *)",
-			"Bash(pwd *)",
-			"Bash(rg *)",
-			"Bash(sips *)",
-			"Bash(tail *)",
-			"Bash(tree *)",
-			"Bash(uname *)",
-			"Bash(wc *)",
-			"Bash(which *)",
-			"Bash(whoami *)"
-		]
-	},
-	"model": "opus[1m]",
-	"hooks": {
-		"PostToolUse": [
-			{
-				"matcher": "Edit|Write",
-				"hooks": [
-					{
-						"type": "command",
-						"command": "jq -r '.tool_input.file_path' | { read -r f; bunx prettier --write \"$f\"; } 2>/dev/null || true"
-					}
-				]
-			}
-		]
-	},
-	"statusLine": {
-		"type": "command",
-		"command": "bash ~/.claude/statusline-command.sh"
-	},
-	"tui": "fullscreen",
-	"voice": {
-		"enabled": false,
-		"mode": "hold"
-	},
-	"theme": "custom:default",
-	"editorMode": "vim",
-	"inputNeededNotifEnabled": true,
-	"agentPushNotifEnabled": true,
-	"skipAutoPermissionPrompt": true,
-	"voiceEnabled": false
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(brew list *)",
+      "Bash(bun pm ls *)",
+      "Bash(bun run build *)",
+      "Bash(bun run lint *)",
+      "Bash(bun run typecheck *)",
+      "Bash(cat *)",
+      "Bash(date *)",
+      "Bash(df *)",
+      "Bash(diff *)",
+      "Bash(du *)",
+      "Bash(env *)",
+      "Bash(file *)",
+      "Bash(find *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git status *)",
+      "Bash(grep *)",
+      "Bash(head *)",
+      "Bash(ls *)",
+      "Bash(npm list *)",
+      "Bash(npm run build *)",
+      "Bash(npm run lint *)",
+      "Bash(npm run typecheck *)",
+      "Bash(pnpm list *)",
+      "Bash(pnpm outdated *)",
+      "Bash(pnpm run build *)",
+      "Bash(pnpm run format *)",
+      "Bash(pnpm run lint *)",
+      "Bash(pnpm run typecheck *)",
+      "Bash(pnpm view *)",
+      "Bash(pnpm why *)",
+      "Bash(pwd *)",
+      "Bash(rg *)",
+      "Bash(sips *)",
+      "Bash(tail *)",
+      "Bash(tree *)",
+      "Bash(uname *)",
+      "Bash(wc *)",
+      "Bash(which *)",
+      "Bash(whoami *)"
+    ]
+  },
+  "model": "opus[1m]",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | { read -r f; bunx prettier --write \"$f\"; } 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "lua-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "theme": "custom:default",
+  "editorMode": "vim",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
 }
