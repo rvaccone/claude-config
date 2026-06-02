@@ -27,6 +27,7 @@ todos/
 stats-cache.json
 policy-limits.json
 .last-cleanup
+.last-update-result.json
 
 # plugin marketplace cache (auto-fetched, ~4.5 MB)
 plugins/
