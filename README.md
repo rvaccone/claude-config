@@ -22,10 +22,10 @@ cd claude-config
 
 ## What's not tracked
 
--   `~/.claude.json` — MCP server credentials live here, **not** under `~/.claude/`. Never commit it.
--   `backups/`, `cache/`, `projects/`, `plugins/`, `todos/`, and all other runtime/ephemeral state — see `.gitignore`.
--   `settings.local.json` — machine-local overrides if you ever need them.
--   Skills (`~/.claude/skills/`) — managed separately at `~/.agents/skills/`.
+- `~/.claude.json` — MCP server credentials live here, **not** under `~/.claude/`. Never commit it.
+- `backups/`, `cache/`, `projects/`, `plugins/`, `todos/`, and all other runtime/ephemeral state — see `.gitignore`.
+- `settings.local.json` — machine-local overrides if you ever need them.
+- Skills (`~/.claude/skills/`) — managed separately at `~/.agents/skills/`.
 
 ## Updating
 

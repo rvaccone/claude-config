@@ -47,5 +47,11 @@ settings.json.bak.*
 # local-only settings overrides
 settings.local.json
 
+# machine-specific generated chrome native-host wrapper (hardcodes home dir + version)
+chrome/
+
+# local runtime state
+remote-settings.json
+
 # macOS
 .DS_Store
