@@ -81,12 +81,13 @@
 			}
 		}
 	},
-	"effortLevel": "high",
+	"effortLevel": "xhigh",
 	"tui": "fullscreen",
 	"voice": {
 		"enabled": true,
 		"mode": "hold"
 	},
+	"skipWorkflowUsageWarning": true,
 	"theme": "custom:default",
 	"editorMode": "vim",
 	"inputNeededNotifEnabled": true,
