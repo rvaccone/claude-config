@@ -17,32 +17,40 @@ fmt_reset() {
 	date -r "$epoch" "+$fmt" 2>/dev/null | tr '[:upper:]' '[:lower:]'
 }
 
+# Nerd Font glyphs (Font Awesome legacy range — stable across Nerd Font versions).
+GLYPH_MODEL=$''   # cube
+GLYPH_EFFORT=$''  # bolt
+GLYPH_CTX=$''     # pie-chart
+GLYPH_5H=$''      # clock
+GLYPH_7D=$''      # calendar
+GLYPH_RESET=$''   # refresh
+
 parts=()
 
 if [ -n "$model" ]; then
-	parts+=("$model")
+	parts+=("$GLYPH_MODEL $model")
 fi
 
 if [ -n "$effort" ]; then
-	parts+=("effort: $effort")
+	parts+=("$GLYPH_EFFORT $effort")
 fi
 
 if [ -n "$used" ] && [ -n "$remaining" ]; then
 	used_int=$(printf "%.0f" "$used")
-	ctx_str="ctx: ${used_int}%"
+	ctx_str="$GLYPH_CTX ${used_int}%"
 	parts+=("$ctx_str")
 fi
 
 if [ -n "$five_hr" ]; then
-	str="5h: $(printf '%.0f' "$five_hr")%"
+	str="$GLYPH_5H $(printf '%.0f' "$five_hr")%"
 	r=$(fmt_reset "$five_reset" '%-I:%M%p')
-	[ -n "$r" ] && str="$str (resets $r)"
+	[ -n "$r" ] && str="$str $GLYPH_RESET $r"
 	parts+=("$str")
 fi
 if [ -n "$seven_day" ]; then
-	str="7d: $(printf '%.0f' "$seven_day")%"
+	str="$GLYPH_7D $(printf '%.0f' "$seven_day")%"
 	r=$(fmt_reset "$seven_reset" '%a %-I%p')
-	[ -n "$r" ] && str="$str (resets $r)"
+	[ -n "$r" ] && str="$str $GLYPH_RESET $r"
 	parts+=("$str")
 fi
 

@@ -4,6 +4,7 @@
 	"overrides": {
 		"promptBorder": "#D97757",
 		"planMode": "#8FA98A",
+		"warning": "#C48A8A",
 		"autoAccept": "#C4876D",
 		"diffAdded": "#1C2B16",
 		"diffAddedDimmed": "#171D14",
