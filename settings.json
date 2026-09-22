@@ -157,5 +157,6 @@
 			"**Routine under this repo's prefix**: Bash and swift/xcrun/lipo/hdiutil/security/defaults/osascript/xattr/spctl invocations scoped to /Users/vac/Developer/lodestar are routine toolchain use for this project"
 		]
 	},
-	"voiceEnabled": true
+	"voiceEnabled": true,
+	"remoteControlAtStartup": true
 }
