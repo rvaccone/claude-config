@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
 input=$(cat)
 
-model=$(echo "$input" | jq -r '.model.display_name // empty')
-effort=$(echo "$input" | jq -r '.effort.level // empty')
-used=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
-remaining=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
-five_hr=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
-five_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
-seven_day=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
-seven_reset=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
-cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd // empty')
+# One jq invocation for every field instead of nine. Fields are joined on
+# \001 rather than a tab: tab is IFS whitespace, so bash would collapse the
+# runs of it that absent fields produce and shift every later field left.
+IFS=$'\001' read -r -d '' model effort used remaining five_hr five_reset seven_day seven_reset cwd < <(
+	printf '%s' "$input" | jq -j '[
+		(.model.display_name // ""),
+		(.effort.level // ""),
+		((.context_window.used_percentage // "") | tostring),
+		((.context_window.remaining_percentage // "") | tostring),
+		((.rate_limits.five_hour.used_percentage // "") | tostring),
+		((.rate_limits.five_hour.resets_at // "") | tostring),
+		((.rate_limits.seven_day.used_percentage // "") | tostring),
+		((.rate_limits.seven_day.resets_at // "") | tostring),
+		(.workspace.current_dir // .cwd // "")
+	] | join("\u0001")'
+)
 
 # Format a Unix epoch reset time using the given date(1) format string.
 fmt_reset() {
