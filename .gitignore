@@ -55,3 +55,8 @@ remote-settings.json
 
 # macOS
 .DS_Store
+
+# local runtime state (feedback drafts, MCP auth/discovery caches)
+feedback/
+state/
+mcp-needs-auth-cache.json
