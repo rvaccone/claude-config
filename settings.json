@@ -105,14 +105,7 @@
 		"swift-lsp@claude-plugins-official": true,
 		"typescript-lsp@claude-plugins-official": true
 	},
-	"extraKnownMarketplaces": {
-		"claude-code-warp": {
-			"source": {
-				"source": "github",
-				"repo": "warpdotdev/claude-code-warp"
-			}
-		}
-	},
+	"extraKnownMarketplaces": {},
 	"effortLevel": "xhigh",
 	"modelSettings": {
 		"claude-fable-5": {
