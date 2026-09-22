@@ -2,15 +2,21 @@
 	"name": "default",
 	"base": "dark",
 	"overrides": {
-		"promptBorder": "#D97757",
+		"promptBorder": "#F26B2A",
+		"promptBorderShimmer": "#F5905F",
 		"planMode": "#8FA98A",
 		"warning": "#C48A8A",
+		"warningShimmer": "#D3A7A7",
 		"autoAccept": "#C4876D",
-		"diffAdded": "#1C2B16",
-		"diffAddedDimmed": "#171D14",
-		"diffAddedWord": "#96A874",
-		"diffRemoved": "#291A22",
-		"diffRemovedDimmed": "#1D1619",
-		"diffRemovedWord": "#BD8E9E"
+		"autoAcceptShimmer": "#D3A592",
+		"diffAdded": "#33372F",
+		"diffAddedDimmed": "#2D2F2B",
+		"diffAddedWord": "#414A38",
+		"diffRemoved": "#3F322E",
+		"diffRemovedDimmed": "#332D2B",
+		"diffRemovedWord": "#5D4036",
+		"permission": "#A8B97F",
+		"permissionShimmer": "#BECA9F",
+		"suggestion": "#A8B97F"
 	}
 }
